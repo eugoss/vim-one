@@ -294,7 +294,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
     let s:dark = 1
     let s:mono_1 = ['#abb2bf', '145']
     let s:mono_2 = ['#828997', '102']
-    let s:mono_3 = ['#5c6370', '59']
+    let s:mono_3 = ['#7c8390', '59']
     let s:mono_4 = ['#4b5263', '59']
 
     let s:hue_1  = ['#56b6c2', '73'] " cyan
@@ -316,7 +316,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
 
     let s:vertsplit    = ['#181a1f', '233']
     let s:special_grey = ['#3b4048', '16']
-    let s:visual_grey  = ['#3e4452', '17']
+    let s:visual_grey  = ['#4e5462', '17']
     let s:pmenu        = ['#333841', '16']
   else
     let s:mono_1 = ['#494b53', '23']
@@ -370,7 +370,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('IncSearch',    s:hue_6,         '',               '')
   call <sid>X('LineNr',       s:mono_4,        '',               '')
   call <sid>X('CursorLineNr', s:syntax_fg,     s:syntax_cursor,  'none')
-  call <sid>X('MatchParen',   s:hue_5,         s:syntax_cursor,  'underline,bold')
+  call <sid>X('MatchParen',   s:hue_5,         s:syntax_cursor,  'bold')
   call <sid>X('Italic',       '',              '',               s:italic)
   call <sid>X('ModeMsg',      s:syntax_fg,     '',               '')
   call <sid>X('MoreMsg',      s:syntax_fg,     '',               '')
@@ -394,7 +394,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('WarningMsg',   s:hue_5,         '',               '')
   call <sid>X('TooLong',      s:hue_5,         '',               '')
   call <sid>X('WildMenu',     s:syntax_fg,     s:mono_3,         '')
-  call <sid>X('SignColumn',   '',              s:syntax_bg,      '')
+  call <sid>X('SignColumn',   '',              s:syntax_cursor,  '')
   call <sid>X('Special',      s:hue_2,         '',               '')
   " }}}
 
@@ -574,9 +574,9 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   hi link gitcommitSelectedArrow  gitcommitSelectedFile
   hi link gitcommitUnmergedArrow  gitcommitUnmergedFile
 
-  call <sid>X('SignifySignAdd',    s:hue_4,   '', '')
-  call <sid>X('SignifySignChange', s:hue_6_2, '', '')
-  call <sid>X('SignifySignDelete', s:hue_5,   '', '')
+  call <sid>X('SignifySignAdd',    s:hue_4,   s:syntax_cursor, '')
+  call <sid>X('SignifySignChange', s:hue_6_2, s:syntax_cursor, '')
+  call <sid>X('SignifySignDelete', s:hue_5,   s:syntax_cursor, '')
   hi link GitGutterAdd    SignifySignAdd
   hi link GitGutterChange SignifySignChange
   hi link GitGutterDelete SignifySignDelete
@@ -835,8 +835,8 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   " }}}
 
   " ALE (Asynchronous Lint Engine) highlighting -----------------------------{{{
-  call <sid>X('ALEWarningSign', s:hue_6_2, '', '')
-  call <sid>X('ALEErrorSign', s:hue_5,   '', '')
+  call <sid>X('ALEWarningSign', s:hue_6_2, s:syntax_cursor, '')
+  call <sid>X('ALEErrorSign', s:hue_5,   s:syntax_cursor, '')
 
 
    " Neovim NERDTree Background fix ------------------------------------------{{{
